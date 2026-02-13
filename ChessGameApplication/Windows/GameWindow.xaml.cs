@@ -43,9 +43,9 @@ namespace ChessGameApplication.Windows
             InitializeComponent();
             RenderChessBoard();
         }
-        public void StartNewGame()
+        public void StartNewGame(bool is960)
         {
-            Game.StartNewGame();
+            Game.StartNewGame(is960);
             UpdateTurnIndicators();
             RenderChessBoard();
         }

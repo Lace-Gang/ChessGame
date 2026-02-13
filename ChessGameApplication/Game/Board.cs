@@ -33,10 +33,11 @@ namespace ChessGameApplication.Game
             _boardValidationService = new BoardValidationService(this);
         }
 
-        public void Initialize()
+        public void Initialize(bool is960)
         {
             _piecePlacementService.ClearBoard();
-            _piecePlacementService.SetStartingPieces();
+            if (is960) _piecePlacementService.SetStartingPieces960();
+            else _piecePlacementService.SetStartingPieces();
         }
 
         public Piece? GetPieceAt(Position position) => Squares[position.Row, position.Column];

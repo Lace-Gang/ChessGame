@@ -29,6 +29,11 @@
                     Click="NewGame_Click"
                     Margin="0,0,0,25"/>
 
+            <Button Content="Нова гра 960"
+                    Style="{DynamicResource ButtonStyle}"
+                    Click="NewGame960_Click"
+                    Margin="0,0,0,25"/>
+
             <Button Content="Продовжити гру"
                     Style="{DynamicResource ButtonStyle}"
                     Click="ContinueGame_Click"

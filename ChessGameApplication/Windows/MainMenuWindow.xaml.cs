@@ -33,6 +33,12 @@ namespace ChessGameApplication.Windows
             Manager.Notify(WindowActions.OpenGame);
         }
 
+        //
+        private void NewGame960_Click(object sender, RoutedEventArgs e)
+        {
+            Manager.Notify(WindowActions.OpenGame960);
+        }
+
         private void ContinueGame_Click(object sender, RoutedEventArgs e)
         {
             Manager.Notify(WindowActions.ContinueGame);

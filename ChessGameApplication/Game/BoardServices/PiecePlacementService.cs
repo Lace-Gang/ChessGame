@@ -12,7 +12,7 @@ public class PiecePlacementService
         _board = board;
     }
 
-    public void SetStartingPieces_1()
+    public void SetStartingPieces()
     {
         var startingPieces = new (Type pieceType, int x, int y)[]
         {
@@ -34,7 +34,7 @@ public class PiecePlacementService
         }
     }
 
-    public void SetStartingPieces()
+    public void SetStartingPieces960()
     {
         Random r = new Random();
 

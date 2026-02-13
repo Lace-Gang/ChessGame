@@ -26,9 +26,9 @@ namespace ChessGameApplication.Game
 
             Board = new Board();
         }
-        public void StartNewGame()
+        public void StartNewGame(bool is960)
         {
-            Board.Initialize(); 
+            Board.Initialize(is960); 
             CurrentTurn = PieceColor.White;
             IsGameOver = false;
 

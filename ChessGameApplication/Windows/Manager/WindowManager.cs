@@ -34,7 +34,11 @@ namespace ChessGameApplication.Windows.Manager
                     await SwitchWindowAsync(mainMenuWindow);
                     break;
                 case WindowActions.OpenGame:
-                    gameWindow.StartNewGame();
+                    gameWindow.StartNewGame(false);
+                    await SwitchWindowAsync(gameWindow);
+                    break;
+                case WindowActions.OpenGame960:
+                    gameWindow.StartNewGame(true);
                     await SwitchWindowAsync(gameWindow);
                     break;
                 case WindowActions.OpenSettings:

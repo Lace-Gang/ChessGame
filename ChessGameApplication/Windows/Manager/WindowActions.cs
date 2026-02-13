@@ -10,6 +10,7 @@ namespace ChessGameApplication.Windows.Manager
     {
         OpenMainMenu,
         OpenGame,
+        OpenGame960,
         OpenSettings,
         Exit,
         ContinueGame,
