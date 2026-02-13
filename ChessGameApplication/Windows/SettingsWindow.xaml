@@ -1,0 +1,112 @@
+﻿<Window x:Class="ChessGameApplication.Windows.SettingsWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ChessGameApplication.Windows"
+        mc:Ignorable="d"
+        Title="Налаштування"
+        WindowStartupLocation="CenterScreen"
+        Width="1280" Height="720"
+        Background="{DynamicResource WindowBackgroundBrush}"
+        ResizeMode="NoResize">
+    
+    <Grid Margin="30">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <TextBlock Text="Налаштування"
+                   Grid.Row="0"
+                   FontSize="42"
+                   FontWeight="Bold"
+                   Foreground="{DynamicResource ForegroundBrush}"
+                   HorizontalAlignment="Center"
+                   Margin="0,0,0,20"/>
+
+        <Border BorderThickness="2"
+                BorderBrush="Gray"
+                CornerRadius="10"
+                Padding="10"
+                Margin="20" Grid.Row="1">
+            <Grid Grid.Row="1" Margin="50,10,50,10">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="85"/>
+                    <RowDefinition Height="85"/>
+                    <RowDefinition Height="85"/>
+                    <RowDefinition Height="85"/>
+                    <RowDefinition Height="85"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="200"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <TextBlock Text="Тема:" 
+                           Grid.Row="0" Grid.Column="0"
+                           VerticalAlignment="Center"
+                           Style="{DynamicResource TextBlockStyle}" 
+                           HorizontalAlignment="Left"/>
+
+                <StackPanel Grid.Row="0" Grid.Column="1" Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Right">
+                    <RadioButton Content="Світла" Name="LightRadio" GroupName="ThemeGroup" Tag="Light"
+                                 Checked="ThemeRadioButton_Checked"
+                                 Style="{DynamicResource RadioButtonStyle}"/>
+                    <RadioButton Content="Темна" Name="DarkRadio" GroupName="ThemeGroup" Tag="Dark"
+                                 Checked="ThemeRadioButton_Checked"
+                                 Style="{DynamicResource RadioButtonStyle}"/>
+                </StackPanel>
+
+                <TextBlock Text="Режим вікна:"
+                           Grid.Row="1" Grid.Column="0"
+                           VerticalAlignment="Center"
+                           Style="{DynamicResource TextBlockStyle}" 
+                           HorizontalAlignment="Left"/>
+
+                <ComboBox Grid.Row="1" Grid.Column="1"
+                          Name="WindowModeComboBox"
+                          SelectionChanged="WindowModeComboBox_SelectionChanged" HorizontalAlignment="Right" VerticalAlignment="Center"
+                          Style="{DynamicResource ComboBoxStyle}">
+                    <ComboBoxItem Content="Віконний" Tag="Windowed"/>
+                    <ComboBoxItem Content="На весь екран" Tag="Fullscreen"/>
+                </ComboBox>
+
+                <TextBlock Text="Скін фігур:" 
+                           Grid.Row="2" Grid.Column="0"
+                           VerticalAlignment="Center"
+                           Style="{DynamicResource TextBlockStyle}" 
+                           HorizontalAlignment="Left"/>
+
+                <ComboBox Grid.Row="2" Grid.Column="1"
+                          Name="PieceSkinComboBox"
+                          SelectionChanged="PieceSkinComboBox_SelectionChanged" 
+                          HorizontalAlignment="Right" 
+                          VerticalAlignment="Center"
+                          Width="250"
+                          Style="{DynamicResource ComboBoxStyle}">
+                    <ComboBoxItem Tag="Classic">
+                        <StackPanel Orientation="Horizontal">
+                            <Image Source="/images/classic/king_light.png" Width="20" Height="20" Margin="0,0,5,0"/>
+                            <TextBlock Text="Класичний" VerticalAlignment="Center"/>
+                        </StackPanel>
+                    </ComboBoxItem>
+                    <ComboBoxItem Tag="Cute">
+                        <StackPanel Orientation="Horizontal">
+                            <Image Source="/images/cute/king_light_cute.png" Width="20" Height="20" Margin="0,0,5,0"/>
+                            <TextBlock Text="Милий" VerticalAlignment="Center"/>
+                        </StackPanel>
+                    </ComboBoxItem>
+                </ComboBox>
+            </Grid>
+        </Border>
+
+        <Button Content="Повернутися"
+                    Grid.Row="2"
+                    Style="{DynamicResource ButtonStyle}"
+                    Width="200"
+                    HorizontalAlignment="Right"
+                    Click="BackToMenu_Click"/>
+    </Grid>
+</Window>

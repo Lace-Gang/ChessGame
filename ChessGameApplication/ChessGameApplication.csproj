@@ -1,0 +1,80 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Images\chess-player-one.png" />
+    <None Remove="Images\chess-player-two.png" />
+    <None Remove="images\classic\bishop_dark.png" />
+    <None Remove="images\classic\bishop_light.png" />
+    <None Remove="images\classic\king_dark.png" />
+    <None Remove="images\classic\king_light.png" />
+    <None Remove="images\classic\knight_dark.png" />
+    <None Remove="images\classic\knight_light.png" />
+    <None Remove="images\classic\pawn_dark.png" />
+    <None Remove="images\classic\pawn_light.png" />
+    <None Remove="images\classic\queen_dark.png" />
+    <None Remove="images\classic\queen_light.png" />
+    <None Remove="images\classic\rook_dark.png" />
+    <None Remove="images\classic\rook_light.png" />
+    <None Remove="images\cute\Bishop_dark_cute.png" />
+    <None Remove="images\cute\Bishop_light_cute.png" />
+    <None Remove="images\cute\King_dark_cute.png" />
+    <None Remove="images\cute\King_light_cute.png" />
+    <None Remove="images\cute\Knight_dark_cute.png" />
+    <None Remove="images\cute\Knight_light_cute.png" />
+    <None Remove="images\cute\Pawn_dark_cute.png" />
+    <None Remove="images\cute\Pawn_light_cute.png" />
+    <None Remove="images\cute\Queen_dark_cute.png" />
+    <None Remove="images\cute\Queen_light_cute.png" />
+    <None Remove="images\cute\Rook_dark_cute.png" />
+    <None Remove="images\cute\Rook_light_cute.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Costura.Fody" Version="6.0.0">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="ILRepack" Version="2.0.42">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Images\chess-player-one.png" />
+    <Resource Include="Images\chess-player-two.png" />
+    <Resource Include="images\classic\bishop_dark.png" />
+    <Resource Include="images\classic\bishop_light.png" />
+    <Resource Include="images\classic\king_dark.png" />
+    <Resource Include="images\classic\king_light.png" />
+    <Resource Include="images\classic\knight_dark.png" />
+    <Resource Include="images\classic\knight_light.png" />
+    <Resource Include="images\classic\pawn_dark.png" />
+    <Resource Include="images\classic\pawn_light.png" />
+    <Resource Include="images\classic\queen_dark.png" />
+    <Resource Include="images\classic\queen_light.png" />
+    <Resource Include="images\classic\rook_dark.png" />
+    <Resource Include="images\classic\rook_light.png" />
+    <Resource Include="images\cute\bishop_dark_cute.png" />
+    <Resource Include="images\cute\bishop_light_cute.png" />
+    <Resource Include="images\cute\king_dark_cute.png" />
+    <Resource Include="images\cute\king_light_cute.png" />
+    <Resource Include="images\cute\knight_dark_cute.png" />
+    <Resource Include="images\cute\knight_light_cute.png" />
+    <Resource Include="images\cute\pawn_dark_cute.png" />
+    <Resource Include="images\cute\pawn_light_cute.png" />
+    <Resource Include="images\cute\queen_dark_cute.png" />
+    <Resource Include="images\cute\queen_light_cute.png" />
+    <Resource Include="images\cute\rook_dark_cute.png" />
+    <Resource Include="images\cute\rook_light_cute.png" />
+  </ItemGroup>
+
+</Project>

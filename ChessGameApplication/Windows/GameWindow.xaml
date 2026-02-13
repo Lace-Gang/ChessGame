@@ -1,0 +1,75 @@
+﻿<Window x:Class="ChessGameApplication.Windows.GameWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ChessGameApplication.Windows"
+        mc:Ignorable="d"
+        Title="Гра — Шахи"
+        Width="1280" Height="800"
+        WindowStartupLocation="CenterScreen"
+        Background="{DynamicResource WindowBackgroundBrush}"
+        ResizeMode="CanResizeWithGrip"
+        Topmost="False">
+
+    <Grid Margin="20">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <UniformGrid Name="ChessBoard"
+                     Rows="8" Columns="8"
+                     Width="640" Height="640"
+                     Margin="20"
+                     VerticalAlignment="Center"
+                     HorizontalAlignment="Center">
+        </UniformGrid>
+
+        <Grid Grid.Column="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="50*"/>
+                <RowDefinition Height="50*"/>
+            </Grid.RowDefinitions>
+            
+            <Image x:Name="TopTurnIndicator"
+                   Grid.Row="0"
+                   Source="/images/chess-player-two.png"
+                   Width="75" Height="75"
+                   VerticalAlignment="Top"
+                   HorizontalAlignment="Center"
+                   Margin="0,100,0,0" Opacity="1" Visibility="Collapsed"/>
+
+            <Image x:Name="BottomTurnIndicator"
+                   Grid.Row="1"
+                   Source="/images/chess-player-one.png"
+                   Width="75" Height="75"
+                   VerticalAlignment="Bottom"
+                   HorizontalAlignment="Center"
+                   Margin="0,0,0,100" Opacity="1"/>
+        </Grid>
+        
+        <StackPanel Grid.Column="2"
+                    VerticalAlignment="Center"
+                    HorizontalAlignment="Center"
+                    Width="300">
+
+            <TextBlock x:Name="TurnTextBlock"
+                       Text="Хід: Білий"
+                       FontWeight="Bold"
+                       Margin="0,0,0,30"
+                       HorizontalAlignment="Center"
+                       Style="{DynamicResource TextBlockStyle}"/>
+
+            <Button Content="Зберегти гру"
+                    Style="{DynamicResource ButtonStyle}"
+                    Margin="0,0,0,20"
+                    Click="SaveGame_Click"/>
+
+            <Button Content="Вийти в меню"
+                    Style="{DynamicResource ButtonStyle}"
+                    Click="BackToMenu_Click"/>
+        </StackPanel>
+    </Grid>
+</Window>
