@@ -10,15 +10,15 @@ namespace ChessGame.Tests
         [Fact]
         public void KingIsBetweenRooks()
         {
+            //Get board, placements and pieces
             Board board = new Board();
             PiecePlacementService placement = new PiecePlacementService(board);
 
-            placement.SetStartingPieces960();
+            placement.SetStartingPieces960();   //set up placements for 960
 
             IEnumerable<Piece> pieces = board.GetAllPieces();
 
-            //Console.WriteLine(pieces);
-
+            //Get positions for specific pieces (rooks and kings)
             int wRooksGathered = 0;
             int bRooksGathered = 0;
             Position wRook1 = new Position();
@@ -72,7 +72,7 @@ namespace ChessGame.Tests
                 }
             }
 
-            //Assert for white pieces
+            //Assert for white pieces that king is between rooks
             if(wRook1.Row > wRook2.Row)
             {
                 Assert.True((wRook1.Row > wKing.Row) && (wKing.Row > wRook2.Row));
@@ -82,7 +82,7 @@ namespace ChessGame.Tests
                 Assert.True((wRook2.Row > wKing.Row) && (wKing.Row > wRook1.Row));
             }
 
-            //Assert for black pieces
+            //Assert for black pieces that king is between rooks
             if (bRook1.Row > bRook2.Row)
             {
                 Assert.True((bRook1.Row > bKing.Row) && (bKing.Row > bRook2.Row));

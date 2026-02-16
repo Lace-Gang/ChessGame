@@ -34,6 +34,9 @@ public class PiecePlacementService
         }
     }
 
+    /// <summary>
+    /// Sets randomized starting positions of pieces in accordance with the rules of Chess960.
+    /// </summary>
     public void SetStartingPieces960()
     {
         Random r = new Random();
